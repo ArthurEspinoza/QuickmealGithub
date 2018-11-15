@@ -80,15 +80,24 @@ table{
 }
 td h3{
     color: #5a5a5a;
-    text-align: center;
+    width: 50%;
+    /*text-align: center;*/
 }
 .tdImg{
     width: 100%;
     height: auto;
 }
-.tdBtn{
-    margin-left: 25%;
-    margin-right: 25%;
+#tdBtn{
+    background-color: #f1f1f1;
+    color:#c50000;
+    margin: 20px 47% 20px 47%;
+    padding: 10px 15px 10px 15px;
+    border: 3px solid #c50000;
+}
+#tdBtn:hover{
+    background-color: #c50000;
+    color:#f1f1f1;
+    border: 3px solid #f1f1f1;
 }
  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
  @media screen and (max-width: 600px) {

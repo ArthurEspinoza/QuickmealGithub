@@ -39,7 +39,8 @@
                 <tr>
                     <td>
                         <h3>Pizza Pepperoni $100</h3>
-                        <button class="tdBtn">Comprar</button>
+                        <span>Cantidad:</span>
+                        <input type="number" name="cantidadPeperoni" id="cpeperoni" min="0" max="10">
                     </td>
                 </tr>
             </table>
@@ -54,7 +55,8 @@
                 <tr>
                     <td>
                         <h3>Pizza Hawaiana $80</h3>
-                        <button class="tdBtn">Comprar</button>
+                        <span>Cantidad:</span>
+                        <input type="number" name="cantidadHawaiana" id="chawaiana" min="0" max="10">
                     </td>
                 </tr>
             </table>
@@ -68,11 +70,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <h3>Pizza 4 Quesos $130</h3>
-                        <button class="tdBtn">Comprar</button>
+                        <h3>Pizza 4 Quesos $130</h3> 
+                        <span>Cantidad:</span>
+                        <input type="number" name="cantidad4quesos" id="c4quesos" min="0" max="10">
                     </td>
                 </tr>
             </table>
         </div>
     </div>
+    <input id="tdBtn" type="button" value="Ordenar">
 </body>
