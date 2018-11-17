@@ -35,7 +35,10 @@ function ordenar(){
 
     graficar();
 }
-
+function redireccionar(){
+    //alert("Orden pasada a cocina, espere a que un mesero le sirva la comida")
+    console.log("hola");
+}
 function graficar(){
     document.write("<body style='background-color:#fffdef;'>")
     document.write("<div style='background-color:#f2f2f2;width:50%;border:3px solid #c50000;margin-left:25%;margin-rigth:25%'>")
@@ -68,6 +71,8 @@ function graficar(){
                     "<td></td>"+
                     "<td>"+"$"+sumatoria+"</td>"+"</tr>");
     document.write("</table>")
+    document.write("<span style='margin-left:20%;margin-right:10%;'>Desea mandar esta orden?</span>"+
+                    "<button id='btn' style='margin-bottom:10%;background-color: #f1f1f1;color:#c50000;border: 3px solid #c50000' onclick='alert('La orden fue mandada con exito a la cocina;location.href=menu2.html')'>Aceptar</button>")
     document.write("</div>")
     document.write("</body>")
 }

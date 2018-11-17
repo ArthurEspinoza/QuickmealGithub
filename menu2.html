@@ -41,7 +41,7 @@
                     <td>
                         <h3>Pizza Pepperoni $100</h3>
                         <span>Cantidad:</span>
-                        <input type="number" name="cantidadPeperoni" id="cpeperoni" min="0" max="10">
+                        <input type="number" name="cantidadPeperoni" id="cpeperoni" value="0" min="0" max="10">
                     </td>
                 </tr>
             </table>
@@ -57,7 +57,7 @@
                     <td>
                         <h3>Pizza Hawaiana $80</h3>
                         <span>Cantidad:</span>
-                        <input type="number" name="cantidadHawaiana" id="chawaiana" min="0" max="10">
+                        <input type="number" name="cantidadHawaiana" id="chawaiana" value="0" min="0" max="10">
                     </td>
                 </tr>
             </table>
@@ -73,13 +73,35 @@
                     <td>
                         <h3>Pizza 4 Quesos $130</h3> 
                         <span>Cantidad:</span>
-                        <input type="number" name="cantidad4quesos" id="c4quesos" min="0" max="10">
+                        <input type="number" name="cantidad4quesos" id="c4quesos" value="0" min="0" max="10">
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-   
-    <button id="ordenar" onclick="ordenar()" >Ordenar</button>
-
+    <button id="ordenar" onclick="mandar()" >Ordenar</button>
+    <script>
+        function mandar(){
+                     var p = document.getElementById("cpeperoni").value;
+                     var h = document.getElementById("chawaiana").value;
+                     var q = document.getElementById("c4quesos").value;
+                     var pagina = "ordenar.html"+"?";
+                     var nombre=p+h+q;
+                     alert(nombre)
+                     for (let i = 0; i < nombre.length; i++) {
+                         if(i==0){
+                            pagina += "p"+ "=" + escape(eval(nombre[i]))+"&";
+                         }
+                         if(i==1){
+                            pagina += "h"+ "=" + escape(eval(nombre[i]))+"&";
+                         }
+                         if(i==2){
+                            pagina += "q"+ "=" + escape(eval(nombre[i]))+"&";
+                         }
+                     }
+                     pagina = pagina.substring(0,pagina.length-1);
+                     alert(pagina);
+                     location.href=pagina;
+                 }
+    </script>
 </body>
