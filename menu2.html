@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Quickmeal</title>
+       <link rel="stylesheet" href="css/menu.css">
+       <script type= "text/javascript" src= "js_scripts/compra.js"></script>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    </head>
+</html>
+<body>
+    <script>
+            function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    <div class="topnav" id="myTopnav">
+        <div id="logo">
+            <img src="images/logo.jpg" alt="logo">
+        </div>
+        <a href="#platillo" class="active">Platillos</a>
+        <a href="#bebida">Bebidas</a>
+        <a href="#postre">Postres</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="fila">
+        <div class="col-1">
+            <table>
+                <tr>
+                    <td>
+                        <img src="images/pepperoni-pizza-reducido.png" class="tdImg" alt="pepperoni-pizza" width="300" height="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Pizza Pepperoni $100</h3>
+                        <span>Cantidad:</span>
+                        <input type="number" name="cantidadPeperoni" id="cpeperoni" min="0" max="10">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-2">
+            <table>
+                <tr>
+                    <td>
+                        <img src="images/hawaiana-pizza-reducido.png" class="tdImg" alt="hawaiana-pizza" width="300" height="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Pizza Hawaiana $80</h3>
+                        <span>Cantidad:</span>
+                        <input type="number" name="cantidadHawaiana" id="chawaiana" min="0" max="10">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-3">
+            <table>
+                <tr>
+                    <td>
+                        <img src="images/4quesos-pizza-reducido.png" class="tdImg" alt="4quesos-pizza" width="300" height="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Pizza 4 Quesos $130</h3> 
+                        <span>Cantidad:</span>
+                        <input type="number" name="cantidad4quesos" id="c4quesos" min="0" max="10">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+   
+    <button id="ordenar" onclick="ordenar()" >Ordenar</button>
+
+</body>
