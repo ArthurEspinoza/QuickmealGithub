@@ -22,9 +22,9 @@
         <div id="logo">
             <img src="images/logo.jpg" alt="logo">
         </div>
-        <a href="#platillo" class="active">Platillos</a>
+        <a href="menu2.html">Platillos</a>
         <a href="bebida.html">Bebidas</a>
-        <a href="#postre">Postres</a>
+        <a href="#postre" class="active">Postres</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -34,14 +34,14 @@
             <table>
                 <tr>
                     <td>
-                        <img src="images/pepperoni-pizza-reducido.png" class="tdImg" alt="pepperoni-pizza" width="300" height="200">
+                        <img src="img/flan-reducido.png" class="tdImg" alt="flan" width="300" height="200">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <h3>Pizza Pepperoni $100</h3>
+                        <h3>Flan Napolitano $30</h3>
                         <span>Cantidad:</span>
-                        <input type="number" name="cantidadPeperoni" id="cpeperoni" value="0" min="0" max="10">
+                        <input type="number" name="cantidadFlan" id="cflan" value="0" min="0" max="10">
                     </td>
                 </tr>
             </table>
@@ -50,14 +50,14 @@
             <table>
                 <tr>
                     <td>
-                        <img src="images/hawaiana-pizza-reducido.png" class="tdImg" alt="hawaiana-pizza" width="300" height="200">
+                        <img src="img/carlota-reducido.png" class="tdImg" alt="carlota" width="300" height="200">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <h3>Pizza Hawaiana $80</h3>
+                        <h3>Carlota de Limon $25</h3>
                         <span>Cantidad:</span>
-                        <input type="number" name="cantidadHawaiana" id="chawaiana" value="0" min="0" max="10">
+                        <input type="number" name="cantidadCarlota" id="ccarlota" value="0" min="0" max="10">
                     </td>
                 </tr>
             </table>
@@ -66,14 +66,14 @@
             <table>
                 <tr>
                     <td>
-                        <img src="images/4quesos-pizza-reducido.png" class="tdImg" alt="4quesos-pizza" width="300" height="200">
+                        <img src="img/helado-reducido.png" class="tdImg" alt="helado" width="300" height="200">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <h3>Pizza 4 Quesos $130</h3> 
+                        <h3>Helado Napolitano $25</h3> 
                         <span>Cantidad:</span>
-                        <input type="number" name="cantidad4quesos" id="c4quesos" value="0" min="0" max="10">
+                        <input type="number" name="cantidadHeladp" id="chelado" value="0" min="0" max="10">
                     </td>
                 </tr>
             </table>
@@ -82,21 +82,21 @@
     <button id="ordenar" onclick="mandar()" >Ordenar</button>
     <script>
         function mandar(){
-                     var p = document.getElementById("cpeperoni").value;
-                     var h = document.getElementById("chawaiana").value;
-                     var q = document.getElementById("c4quesos").value;
-                     var pagina = "ordenar.html"+"?";
-                     var nombre=p+h+q;
+                     var f = document.getElementById("cflan").value;
+                     var c = document.getElementById("ccarlota").value;
+                     var h = document.getElementById("chelado").value;
+                     var pagina = "ordenarPostre.html"+"?";
+                     var nombre=f+c+h;
                      alert(nombre)
                      for (let i = 0; i < nombre.length; i++) {
                          if(i==0){
-                            pagina += "p"+ "=" + escape(eval(nombre[i]))+"&";
+                            pagina += "f"+ "=" + escape(eval(nombre[i]))+"&";
                          }
                          if(i==1){
-                            pagina += "h"+ "=" + escape(eval(nombre[i]))+"&";
+                            pagina += "c"+ "=" + escape(eval(nombre[i]))+"&";
                          }
                          if(i==2){
-                            pagina += "q"+ "=" + escape(eval(nombre[i]))+"&";
+                            pagina += "h"+ "=" + escape(eval(nombre[i]))+"&";
                          }
                      }
                      pagina = pagina.substring(0,pagina.length-1);

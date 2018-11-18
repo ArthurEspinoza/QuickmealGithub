@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ordenar</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/menu.css">
+    <script>
+    var data = [];
+    var indice=0;
+    cadVariables = location.search.substring(1,location.search.length);
+    arrVariables = cadVariables.split("&");
+    for (i=0; i<arrVariables.length; i++) {
+        arrVariableActual = arrVariables[i].split("=");
+    if (isNaN(parseFloat(arrVariableActual[1])))
+        eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
+    else
+        eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
+    
+    
+    }
+    var ccoca = parseInt(arrVariables[0][2],10);
+    var cboing = parseInt(arrVariables[1][2],10);
+    var cmalteada = parseInt(arrVariables[2][2],10);
+
+        if(ccoca >0){
+            data.push(indice);
+            data[indice] = [ccoca,"Coca-Cola","$15",15*ccoca];
+            indice++;
+        }
+        else{
+            ccoca=0;
+        }
+
+        if(cboing >0 ){
+            data.push(indice);
+            data[indice] = [cboing," Boing de Mango ","$15", 15*cboing];
+            indice++;
+        }
+        else{
+            cboing=0;
+        }
+
+        if(cmalteada >0 ){
+            data.push(indice);
+            data[indice] = [cmalteada," Malteada de Fresa ","$25", 25*cmalteada];
+            indice++;
+        }
+        else{
+            cmalteada=0;
+        }
+    </script>
+</head>
+<body>
+    <div style="background-color:#f2f2f2;width:50%;height: 450px;border:3px solid #c50000;margin-left:25%;margin-right:25%">
+        <center>
+            <h2>SU CUENTA:</h2>
+        </center><br>
+        <table id="cuenta">
+            <tr>
+                <th>Cantidad</th>
+                <th>Descripcion</th>
+                <th>Precio Unitario</th>
+                <th>Importe</th>
+            </tr>
+            <script>
+                for(var i=0; i<indice; i++){
+                document.write("<tr>"+
+                            "<td>"+data[i][0]+"</td>"+
+                            "<td>"+data[i][1]+"</td>"+
+                            "<td>"+data[i][2]+"</td>"+
+                            "<td>"+data[i][3]+"</td>"+
+                            "</tr>");
+                }
+                var sumatoria=0;
+                for(var i=0; i<indice; i++){
+                    sumatoria+=data[i][3];
+                }
+            </script>
+            <tr>
+                <td>Importe Total=</td>
+                <td></td>
+                <td></td>
+                <td>$<script>document.write(sumatoria)</script></td>
+            </tr>
+        </table>
+        <span style="margin-left:25%;margin-right:10%;">Desea mandar estas bebidas?</span>
+        <button id="btn" onclick="rediccionar()">Aceptar</button>
+    </div>
+</body>
+<script>
+     function rediccionar(){
+        alert("Orden enviada a bar");
+        location.href="menu2.html";
+    } 
+</script>
+</html>

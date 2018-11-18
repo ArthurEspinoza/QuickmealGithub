@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ordenar</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/menu.css">
+    <script>
+    var data = [];
+    var indice=0;
+    cadVariables = location.search.substring(1,location.search.length);
+    arrVariables = cadVariables.split("&");
+    for (i=0; i<arrVariables.length; i++) {
+        arrVariableActual = arrVariables[i].split("=");
+    if (isNaN(parseFloat(arrVariableActual[1])))
+        eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
+    else
+        eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
+    
+    
+    }
+    var cflan = parseInt(arrVariables[0][2],10);
+    var ccarlota = parseInt(arrVariables[1][2],10);
+    var chelado = parseInt(arrVariables[2][2],10);
+
+        if(cflan >0){
+            data.push(indice);
+            data[indice] = [cflan,"Flan Napolitano","$30",30*cflan];
+            indice++;
+        }
+        else{
+            cflan=0;
+        }
+
+        if(ccarlota >0 ){
+            data.push(indice);
+            data[indice] = [ccarlota,"Carlota de Limon","$25", 25*ccarlota];
+            indice++;
+        }
+        else{
+            ccarlota=0;
+        }
+
+        if(chelado >0 ){
+            data.push(indice);
+            data[indice] = [chelado,"Helado Napolitano","$25", 25*chelado];
+            indice++;
+        }
+        else{
+            cmalteada=0;
+        }
+    </script>
+</head>
+<body>
+    <div style="background-color:#f2f2f2;width:50%;height: 450px;border:3px solid #c50000;margin-left:25%;margin-right:25%">
+        <center>
+            <h2>SU CUENTA:</h2>
+        </center><br>
+        <table id="cuenta">
+            <tr>
+                <th>Cantidad</th>
+                <th>Descripcion</th>
+                <th>Precio Unitario</th>
+                <th>Importe</th>
+            </tr>
+            <script>
+                for(var i=0; i<indice; i++){
+                document.write("<tr>"+
+                            "<td>"+data[i][0]+"</td>"+
+                            "<td>"+data[i][1]+"</td>"+
+                            "<td>"+data[i][2]+"</td>"+
+                            "<td>"+data[i][3]+"</td>"+
+                            "</tr>");
+                }
+                var sumatoria=0;
+                for(var i=0; i<indice; i++){
+                    sumatoria+=data[i][3];
+                }
+            </script>
+            <tr>
+                <td>Importe Total=</td>
+                <td></td>
+                <td></td>
+                <td>$<script>document.write(sumatoria)</script></td>
+            </tr>
+        </table>
+        <span style="margin-left:25%;margin-right:10%;">Desea mandar estos postres?</span>
+        <button id="btn" onclick="rediccionar()">Aceptar</button>
+    </div>
+</body>
+<script>
+     function rediccionar(){
+        alert("Orden enviada a postreria");
+        location.href="menu2.html";
+    } 
+</script>
+</html>
